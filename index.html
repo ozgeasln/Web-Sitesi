@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özge Nur Aslan - Portfolyo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="mouse-glow"></div>
+
+    <nav class="navbar">
+        <div class="logo">ON/A_</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="active">ANA SAYFA</a></li>
+            <li><a href="#projects">PROJELER</a></li>
+            <li><a href="#skills">YETENEKLER</a></li>
+            <li><a href="#contact">İLETİŞİM</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><i class="fa-solid fa-gamepad"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            
+            <div class="sound-control">
+                <a href="#" id="sound-btn" title="Ambiyans Sesini Aç/Kapat"><i class="fa-solid fa-volume-xmark"></i></a>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.15" title="Ses Seviyesi">
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content fade-in">
+            <h3 class="subtitle">>> GAME DESIGNER</h3>
+            <h1 class="hero-title">ÖZGE NUR<br>ASLAN</h1>
+            <p class="hero-desc">Dijital dünyaları kodlayan, mekanikleri hayata geçiren bir oyun tasarımcısı adayıyım.</p>
+            <a href="#about" class="cyber-btn">HAKKIMDA >_</a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>AŞAĞI KAYDIR</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-inner">
+            <div class="section-tag">■ KARAKTER DOSYASI</div>
+            <h2 class="section-title">HAKKIMDA</h2>
+            
+            <div class="about-container">
+                <div class="about-info slide-in-left">
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-desktop"></i></div>
+                        <p>Bilgisayar Mühendisliği öğrencisiyim ve oyun tasarımına büyük bir merak duyuyorum.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-cube"></i></div>
+                        <p>Bu yolculuğa Blender ile başladım. Zamanla oyun mekanikleri, sistem tasarımı ve oyuncu deneyimi üzerine odaklandım.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><b style="font-size: 1.1rem; text-transform: lowercase;">u</b></div>
+                        <p>Unreal Engine ve Unity ile çalışıyorum. Kendimi sürekli geliştirmeyi ve yeni şeyler üretmeyi seviyorum.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                        <p>Hedefim, tutkulu bir ekiple birlikte özgün bir RPG evreni kurmak ve oyunculara unutulmaz deneyimler sunmak.</p>
+                    </div>
+                </div>
+
+                <div class="about-image slide-in-right">
+                    <img src="lofi-room.jpg" alt="Lofi Odası" class="room-img-glow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <audio id="cyber-audio" loop>
+        <source src="ambient.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+:root {
+    --bg-color: #05010a;
+    --neon-purple: #c822ff;
+    --text-main: #ffffff;
+    --text-muted: #a985b8;
+    --font-main: 'Rajdhani', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* --- MOUSE TAKİP IŞIĞI (SHADER EFEKTİ) --- */
+.mouse-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; 
+    z-index: 50; 
+    background: radial-gradient(circle at 50% 50%, rgba(200, 34, 255, 0.12) 0%, rgba(0, 0, 0, 0) 40%);
+    mix-blend-mode: screen; 
+    transition: background 0.1s ease; 
+}
+
+/* --- NAVİGASYON --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 8px var(--neon-purple);
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons > a {
+    color: var(--text-main);
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.social-icons > a:hover {
+    color: var(--neon-purple);
+}
+
+/* --- DİNAMİK AÇILIR MAVUEL SES KONTROLÜ --- */
+.sound-control {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(200, 34, 255, 0.3);
+}
+
+.sound-control a {
+    color: var(--text-main);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+#sound-btn.active i {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* Slider Başlangıçta Gizli */
+#volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 0;
+    height: 4px;
+    background: rgba(200, 34, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Pürüzsüz kayma ve genişleme efekti */
+    cursor: pointer;
+}
+
+/* Mouse Ses Alanının Üzerine Geldiğinde Açılma Tetikleyicisi */
+.sound-control:hover #volume-slider {
+    width: 80px;
+    opacity: 1;
+    visibility: visible;
+    margin-left: 12px;
+}
+
+#volume-slider:hover {
+    background: rgba(200, 34, 255, 0.4);
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple);
+    cursor: pointer;
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple);
+    cursor: pointer;
+    border: none;
+}
+
+/* --- GİRİŞ EKRANI (HERO) --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    background: linear-gradient(to right, rgba(5,1,10,0.95) 15%, rgba(5,1,10,0.2) 60%), url('hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 10;
+}
+
+.subtitle {
+    color: var(--neon-purple);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.cyber-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    color: var(--text-main);
+    text-decoration: none;
+    border: 1px solid var(--neon-purple);
+    background: rgba(200, 34, 255, 0.08);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(200, 34, 255, 0.2);
+}
+
+.cyber-btn:hover {
+    background: var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    animation: bounce 2s infinite;
+}
+
+.mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid var(--text-muted);
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--text-muted);
+    border-radius: 2px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-12px) translateX(-50%); }
+    60% { transform: translateY(-6px) translateX(-50%); }
+}
+
+/* --- HAKKIMDA BÖLÜMÜ (DEV ÇERÇEVE ARKA PLAN) --- */
+#about {
+    background: url('cyber-frame.jpg') no-repeat center center;
+    background-size: 100% 100%; 
+    background-color: #05010a;
+    
+    margin: 50px 2%; 
+    padding: 80px 6% 100px 6%; 
+    position: relative;
+    border-radius: 8px;
+}
+
+.about-inner {
+    position: relative;
+    z-index: 2; 
+}
+
+.section-tag {
+    color: var(--neon-purple);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.about-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-info {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon-box {
+    min-width: 50px;
+    height: 50px;
+    border: 1px solid var(--neon-purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neon-purple);
+    font-size: 1.4rem;
+    background: rgba(200, 34, 255, 0.05);
+    box-shadow: inset 0 0 8px rgba(200, 34, 255, 0.15);
+}
+
+.info-item p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+/* --- SAĞ TARAF: LOFI ODASI GÖRSELİ --- */
+.about-image {
+    flex: 1;
+}
+
+.room-img-glow {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(200, 34, 255, 0.4);
+    box-shadow: 0 0 25px rgba(200, 34, 255, 0.2), 
+                inset 0 0 10px rgba(0, 0, 0, 0.5); 
+    filter: saturate(1.1) brightness(0.95);
+}
+
+/* --- KAYARAK GİRİŞ ANİMASYONLARI --- */
+.fade-in { opacity: 0; transform: translateY(30px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.slide-in-left { opacity: 0; transform: translateX(-60px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.slide-in-right { opacity: 0; transform: translateX(60px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.show { opacity: 1; transform: translate(0); }
