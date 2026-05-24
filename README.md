@@ -1,32 +1,126 @@
-# 🌌 Cyberpunk & Lofi Themed Interactive Web Project
+# 🌌 Cyberpunk & Lofi Themed Interactive Web Experience
 
-This project is a cyberpunk and lofi-themed Front-End project designed to break the standard website experience and offer visitors an **interactive game interface (HUD)** feel. It was developed from scratch using entirely **Vanilla HTML, CSS, and JavaScript**, without any external libraries or frameworks.
+An immersive cyberpunk and lofi-inspired interactive front-end experience designed to move beyond traditional website structures and create a cinematic **HUD-style interface** atmosphere.
 
----
-
-## ⚠️ Project Status: Work in Progress
-
-**This project is not a static, finished website; it is a living interface experiment.** 
-The current version includes the basic skeleton, the lighting engine, and scroll-based interface transitions. The interface, animations, and site mechanics will evolve over time. New updates will continue to be pushed to the repo, and the site's structure will expand over time.
+This project was developed entirely with **Vanilla HTML, CSS, and JavaScript**, without relying on external frameworks or UI libraries. The focus is on creating a highly interactive, visually dynamic, and performance-optimized web experience using native browser capabilities.
 
 ---
 
-## 🚀 Front-End Features & Mechanics
+# ⚠️ Project Status
 
-The project utilizes the browsers' native capabilities (Native API) with maximum efficiency:
+## 🚧 Work in Progress
 
-*   **Dynamic HUD Transition (Scroll Trigger):** As the user scrolls down the page, the scroll position calculated via JavaScript instantly updates the CSS root variables (`--ui-opacity`). The normal page view smoothly transitions into a cyberpunk game screen (with a grid background and scanlines).
-*   **Custom Audio Controller (Custom Audio UI):** Instead of the default HTML `<audio>` player, a dynamic audio slider designed from scratch with CSS and manipulated with JS is used. It features an ergonomic structure that smoothly expands on hover.
-*   **Mouse Tracking Light (Glow Effect):** Instant `X` and `Y` coordinates of the cursor are retrieved using a JS `mousemove` event listener, creating a real-time light source that interacts with page elements using CSS `radial-gradient` and `mix-blend-mode: screen`.
-*   **Performant Animations:** To prevent performance drops, screen entry animations of DOM elements (Fade-in, Slide) are optimized using the `Intersection Observer API` to trigger only when they become visible on the screen.
+This project is an evolving interface experiment rather than a static finished website.
+
+The current version includes:
+- Core interface structure
+- Dynamic lighting engine
+- Scroll-based HUD transitions
+- Interactive audio controls
+- Performance-focused animations
+
+The project will continue expanding with:
+- New interface systems
+- Additional interaction mechanics
+- Advanced visual effects
+- Improved animation architecture
+- Expanded world-building elements
+
+Continuous updates and improvements are actively being pushed to the repository.
 
 ---
 
-## 📂 File Structure
+# 🚀 Core Features & Mechanics
+
+## 🔹 Dynamic HUD Transition System
+A scroll-triggered interface transformation system that gradually converts the standard page layout into a cyberpunk-inspired HUD environment.
+
+### Includes
+- Scroll position tracking via JavaScript
+- Dynamic CSS root variable manipulation
+- Smooth opacity transitions
+- Grid overlays and scanline effects
+- Immersive interface morphing
+
+---
+
+## 🔹 Custom Audio Controller
+A fully custom-designed audio interface built without the default HTML audio controls.
+
+### Features
+- Interactive hover expansion
+- Dynamic audio slider
+- Minimal cyberpunk-inspired UI
+- Smooth CSS transitions
+- JavaScript-controlled playback system
+
+---
+
+## 🔹 Mouse Tracking Glow Engine
+A real-time lighting system reacting to cursor movement across the interface.
+
+### Technologies Used
+- JavaScript `mousemove` event listeners
+- CSS `radial-gradient`
+- `mix-blend-mode: screen`
+- Dynamic coordinate calculations
+
+This system creates responsive ambient lighting effects that interact with page elements in real time.
+
+---
+
+## 🔹 Optimized Animation Architecture
+Animations are designed with performance optimization as a priority.
+
+### Includes
+- Fade-in animations
+- Slide transitions
+- On-scroll activation
+- GPU-friendly effects
+- Reduced unnecessary DOM rendering
+
+### Optimization Method
+The project uses the **Intersection Observer API** to trigger animations only when elements become visible within the viewport.
+
+---
+
+# 🛠 Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Semantic page structure |
+| CSS3 | Styling, animations, and visual effects |
+| Vanilla JavaScript | Interaction logic and dynamic systems |
+| Intersection Observer API | Performance-optimized animations |
+| Native Browser APIs | Mouse tracking and UI interactions |
+| Git & GitHub | Version control and project management |
+
+---
+
+# 📂 Project Structure
 
 ```text
 / (Root Directory)
-├── index.html       # DOM structure, semantic tags, and game HUD layer
-├── style.css        # CSS variables, dynamic animations, and design
-├── script.js        # Scroll calculations, mouse tracking, and audio engine
-└── /assets          # (hero-bg.jpg, cyber-frame.jpg, lofi-room.jpg, ambient.mp3)
+│
+├── index.html
+│   ├── Semantic page structure
+│   ├── HUD interface layer
+│   └── Interactive content sections
+│
+├── style.css
+│   ├── CSS variables
+│   ├── Animation systems
+│   ├── Cyberpunk visual effects
+│   └── Responsive styling
+│
+├── script.js
+│   ├── Scroll calculations
+│   ├── Mouse tracking engine
+│   ├── Audio controller logic
+│   └── Dynamic UI interactions
+│
+└── assets/
+    ├── hero-bg.jpg
+    ├── cyber-frame.jpg
+    ├── lofi-room.jpg
+    └── ambient.mp3
